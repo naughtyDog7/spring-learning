@@ -7,11 +7,13 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-
+@Component
+@Scope("prototype")
 public class Computer {
     private int id;
     private MusicPlayer musicPlayer;
 
+    @Autowired
     public Computer(MusicPlayer musicPlayer) {
         this.id = 1;
         this.musicPlayer = musicPlayer;

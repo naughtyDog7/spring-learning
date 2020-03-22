@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Random;
 
+@Component
+@Scope("prototype")
 public class MusicPlayer {
 
     private List<Music> musicList;
@@ -19,6 +21,7 @@ public class MusicPlayer {
     @Value("${musicPlayer.volume}")
     private int volume;
 
+    @Autowired
     public MusicPlayer(List<Music> musicList) {
         this.musicList = musicList;
     }
